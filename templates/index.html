@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Interactive Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    #map {
+      height: 100vh;
+      width: 100%;
+    }
+
+    #weather-info, #forecast-info {
+      position: absolute;
+      left: 10px;
+      width: 90%;
+      max-width: 350px;
+      background-color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.3);
+      z-index: 998;
+    }
+
+    #weather-info {
+      top: 100px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    #forecast-info {
+      top: 160px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    #home-button {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      z-index: 1000;
+      padding: 10px 16px;
+      font-size: 18px;
+      border: none;
+      background-color: #1976d2;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .top-button {
+      position: absolute;
+      top: 12px;
+      left: 140px;
+      z-index: 1000;
+      padding: 6px 10px;
+      font-size: 14px;
+      border: none;
+      background-color: #28a745;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      #weather-info, #forecast-info {
+        left: 5%;
+        width: 90%;
+      }
+
+      #home-button {
+        left: 5%;
+        font-size: 16px;
+        padding: 8px 12px;
+      }
+
+      .top-button {
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button id="home-button" onclick="goHome()">Home</button>
+  <div id="weather-info">請點選縣市查看即時氣溫</div>
+  <div id="forecast-info">未來一週的詳細天氣預報</div>
+  <div id="map"></div>
+  <script>
+    function goHome() {
+      location.reload(); // 回首頁
+    }
+  </script>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
