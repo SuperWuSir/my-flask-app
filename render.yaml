@@ -1,0 +1,9 @@
+services:
+  - type: web             # 類型為 Web 服務（HTTP 應用程式）
+    name: us-map-api      # 服務名稱# 專案名稱（Render 控制台中顯示的名稱）。服務的名稱，可以任意命名。
+    env: python           # 環境為 Python  
+    #buildCommand: ""
+    #startCommand: "python app.py"
+    buildCommand: "pip install -r requirements.txt" # 建置時要執行的指令（安裝依賴），安裝你定義在 requirements.txt 中的套件
+    startCommand: "gunicorn app:app"              # 啟動時要執行的指令（啟動 Flask 應用程式）。app.py 檔案裡的 app = Flask(...) 變數
+    plan: free       # 計畫為免費計畫（Render 提供的免費計畫）  
