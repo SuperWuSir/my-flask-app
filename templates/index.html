@@ -76,7 +76,12 @@
         width: 90%;
       }
 
-      #home-button {
+      {% comment %} #home-button {
+        left: 5%;
+        font-size: 16px;
+        padding: 8px 12px;
+      } {% endcomment %}
+      .home-button {
         left: 5%;
         font-size: 16px;
         padding: 8px 12px;
@@ -91,7 +96,7 @@
   </style>
 </head>
 <body>
-  <button class="home-button" onclick="goHome()">Home</button>
+  <button class="btn btn-primary btn-lg px-4 py-2"  onclick="goHome()">Home</button>
   <div id="weather-info">請點選縣市查看即時氣溫</div>
   <div id="forecast-info">未來一週的詳細天氣預報</div>
   <div id="map"></div>
