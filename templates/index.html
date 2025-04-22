@@ -42,61 +42,47 @@
       line-height: 1.4;
     }
 
-    .home-button {
-      position: absolute;
-      top: 20px;
-      left: 10px;
-      z-index: 1000;
-      padding: 10px 16px;
-      font-size: 18px;
-      border: none;
+    .home-btn {
+      left: 80px;
+      font-size: 30px;
       background-color: #1976d2;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
     }
 
-    .top-button {
+    .download-btn {
+      left: 220px;
+      font-Size : 18px;     
+      background-Color: #28a745;
+    }
+
+    .base-btn {
+      top: 20px;
       position: absolute;
-      top: 12px;
-      left: 140px;
-      z-index: 1000;
-      padding: 6px 10px;
-      font-size: 14px;
+      padding: 10px 16px;
+      height: 70px;
       border: none;
-      background-color: #28a745;
-      color: white;
       border-radius: 5px;
       cursor: pointer;
+      z-index: 1000;
+      color: white;
     }
-
+  
     @media (max-width: 768px) {
       #weather-info, #forecast-info {
         left: 5%;
         width: 90%;
       }
-
-      {% comment %} #home-button {
-        left: 5%;
-        font-size: 16px;
-        padding: 8px 12px;
-      } {% endcomment %}
-      .home-button {
-        left: 5%;
-        font-size: 16px;
-        padding: 8px 12px;
-      }
-
-      .top-button {
-        left: 50%;
-        transform: translateX(-50%);
+      .bas-btn.download-btn {
+        top: 20px;
+        left: 140px;
+        background-color: #28a745;
+        color: white;
         font-size: 12px;
       }
     }
   </style>
 </head>
 <body>
-  <button class="btn btn-primary btn-lg px-4 py-2"  onclick="goHome()">Home</button>
+  <button class="base-btn home-btn" onclick="goHome()">Home</button>
   <div id="weather-info">請點選縣市查看即時氣溫</div>
   <div id="forecast-info">未來一週的詳細天氣預報</div>
   <div id="map"></div>
